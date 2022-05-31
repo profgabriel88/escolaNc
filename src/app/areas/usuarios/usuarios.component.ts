@@ -64,6 +64,32 @@ export class UsuariosComponent implements OnInit {
     this.usuarios.splice(i, 1);
   }
 
+  public imprimir(obj: string) {
+    var elemento = document.getElementById(obj);
+    var html = elemento?.innerHTML;
+    var printWindow = window.open(
+      "",
+      "",
+      "left=50000,top=0,width=1000px,height=0px,toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes"
+    );
+
+    var data = new Date;
+
+    printWindow?.document.write("<html>");
+    printWindow?.document.write("<head>");
+    printWindow?.document.write('<style> * { font-size: 0.95rem; font-family: sans-serif; } table { border-spacing: 1em 0.2em; } thead { text-align: left; }</style>');
+    printWindow?.document.write('<style>@page { size: A4;  margin: 5mm 5mm 5mm 5mm; } .printCpf { white-space: nowrap; } .printNone { display: none; }; #linha {display:contents;}</style>');
+    printWindow?.document.write("</head>");
+    printWindow?.document.write("<body>");
+    printWindow?.document.write("<h2>Relação de Usuários Cadastrados - " + data.toLocaleString() + "</h2><hr>")
+    printWindow?.document.write(html ? html : '');
+    printWindow?.document.write("</body>");
+    printWindow?.document.write("</html>");
+    printWindow?.document.close();
+    printWindow?.print();
+  }
+
+
   public usuarios =
   [
     {
