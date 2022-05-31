@@ -1,5 +1,4 @@
 {
-  "usuarios":[
   {
     "nome": "Fátima Lara Mirella Barros",
     "idade": 41,
@@ -321,5 +320,4 @@
     "bairro": "Rancho Alegre III",
     "cidade": "Campo Grande"
   }
-]
 }
