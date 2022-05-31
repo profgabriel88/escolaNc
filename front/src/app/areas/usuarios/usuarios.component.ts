@@ -3,7 +3,6 @@ import { Component,  OnInit, } from '@angular/core';
 import { isNgTemplate } from '@angular/compiler';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from 'src/app/models/Usuario';
-import { fstatSync } from 'fs';
 
 @Component({
   selector: 'app-usuarios',

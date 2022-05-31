@@ -18,6 +18,5 @@ C:\Users\Gabriel.Dai\Documents\escolaNc\back\escolaNc-api\escolaNc\obj\Debug\net
 C:\Users\Gabriel.Dai\Documents\escolaNc\back\escolaNc-api\escolaNc\obj\Debug\netcoreapp3.1\escolaNc.dll
 C:\Users\Gabriel.Dai\Documents\escolaNc\back\escolaNc-api\escolaNc\obj\Debug\netcoreapp3.1\escolaNc.pdb
 C:\Users\Gabriel.Dai\Documents\escolaNc\back\escolaNc-api\escolaNc\obj\Debug\netcoreapp3.1\escolaNc.genruntimeconfig.cache
-C:\Users\Gabriel.Dai\Documents\escolaNc\back\escolaNc-api\escolaNc\bin\Debug\netcoreapp3.1\Models\usuarios.json
 C:\Users\Gabriel.Dai\Documents\escolaNc\back\escolaNc-api\escolaNc\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Gabriel.Dai\Documents\escolaNc\back\escolaNc-api\escolaNc\obj\Debug\netcoreapp3.1\escolaNc.csproj.CopyComplete

@@ -13,11 +13,14 @@ namespace escolaNc.Services
     {
       List<Usuario> usuarios = new List<Usuario>();
 
-      using (StreamReader r = new StreamReader("./Models/usuarios.json"))
+      using (StreamReader r = new StreamReader("./Models/usuarios.csv"))
       {
-        string json = r.ReadToEnd();
-        json = json.Replace("\n", "").Replace("\r", "").Replace("\\", "");
-        usuarios = JsonConvert.DeserializeObject<List<Usuario>>(json);
+        while( r.Peek() >= 0)
+        {
+          string u = r.ReadLine();
+          string[] usuario = u.Split(",");
+          usuarios.Add(new Usuario {nome = usuario[0], idade = usuario[1], cpf = usuario[2], rg = usuario[3], data_nasc = usuario[4], endereco = usuario[5], cidade = usuario[6]});
+        }
       }
       return usuarios;
     }
