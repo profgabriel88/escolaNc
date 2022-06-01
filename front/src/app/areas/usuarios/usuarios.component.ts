@@ -4,6 +4,7 @@ import { isNgTemplate } from '@angular/compiler';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from 'src/app/models/Usuario';
 import { ApiService } from 'src/services/api.service';
+import { UtilitariosService } from 'src/services/utilitarios.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -17,7 +18,7 @@ export class UsuariosComponent implements OnInit {
   public idade = '';
   public cpf = '';
   public rg = '';
-  public dt_nasc = '';
+  public data_nasc = '';
   public endereco = '';
   public cidade = '';
 
@@ -25,40 +26,26 @@ export class UsuariosComponent implements OnInit {
 
   public sucesso: boolean = false;
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private util: UtilitariosService) { }
 
   ngOnInit() {
-    this.api.getUsers().subscribe(
+    this.api.get('usuarios').subscribe(
       (dados: any) => {
         this.usuarios = dados;
       },
       (error: any) => {
         console.error(error);
       },
-      () => {
-        this.sucesso = true;
-      }
     )
-  }
-
-  public editar (item: any) {
-    this.edita = !this.edita;
-    this.nome = item.nome;
-    this.idade = item.idade;
-    this.cpf = item.cpf;
-    this.rg = item.rg ;
-    this.dt_nasc = item.data_nasc;
-    this.endereco = item.endereco;
-    this.cidade = item.cidade;
   }
 
   salvar() {
     let item = {
       nome: this.nome,
       idade: parseInt(this.idade),
-      cpf: this.cpf,
-      rg: this.rg,
-      data_nasc: this.dt_nasc,
+      cpf: this.util.removeMascara(this.cpf),
+      rg: this.util.removeMascara(this.rg),
+      data_nasc: this.data_nasc,
       endereco: this.endereco,
       cidade: this.cidade
     };
@@ -67,10 +54,32 @@ export class UsuariosComponent implements OnInit {
 
     this.usuarios.splice(i, 1, item);
 
-    this.escreverParaArquivo();
+    this.api.post('usuarios/AtualizaUsuario', item).subscribe(
+      (dados: any) => {
+        this.usuarios = dados;
+      },
+      (error: any) => {
+        console.error(error);
+        alert(error.error);
+      }
+    )
 
     this.edita = false;
   }
+
+  editar(item: any) {
+    this.edita = !this.edita;
+
+      this.nome = item.nome;
+      this.idade = item.idade;
+      this.cpf = item.cpf;
+      this.rg = item.rg;
+      this.data_nasc = item.data_nasc;
+      this.endereco = item.endereco;
+      this.cidade = item.cidade;
+
+  }
+
 
   escreverParaArquivo() {
 
@@ -79,12 +88,21 @@ export class UsuariosComponent implements OnInit {
   public setCpf (item: any) {
     this.cpf = item.cpf;
     this.nome = item.nome;
-
   }
 
   public excluir () {
-    let i = this.usuarios.findIndex(x => x.cpf == this.cpf);
-    this.usuarios.splice(i, 1);
+    // let i = this.usuarios.findIndex(x => x.cpf == this.cpf);
+    // this.usuarios.splice(i, 1);
+
+    this.api.delete('usuarios', this.cpf).subscribe(
+      (dados: any) => {
+        console.log(dados);
+      },
+      (error: any) => {
+        console.error(error);
+        alert(error.error);
+      }
+    );
   }
 
   public imprimir(obj: string) {

@@ -10,7 +10,7 @@ namespace escolaNc.Interfaces
   {
     public List<Usuario> RetornaUsuarios();
     public Usuario InsereUsuario(Usuario usuario);
-    public Usuario AtualizaUsuario();
-    public bool RemoveUsuario();
+    public Usuario AtualizaUsuario(Usuario usuario);
+    public bool RemoveUsuario(string cpf);
   }
 }
