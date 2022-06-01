@@ -24,5 +24,19 @@ namespace escolaNc.Services
       }
       return usuarios;
     }
+
+    public Usuario InsereUsuario(Usuario usuario)
+    {
+      
+      return null;
+    }
+    public Usuario AtualizaUsuario()
+    {
+      return null;
+    }
+    public bool RemoveUsuario()
+    {
+      return null;
+    }
   }
 }

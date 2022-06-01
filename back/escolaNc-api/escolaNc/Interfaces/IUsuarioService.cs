@@ -9,5 +9,8 @@ namespace escolaNc.Interfaces
   public interface IUsuarioService
   {
     public List<Usuario> RetornaUsuarios();
+    public Usuario InsereUsuario(Usuario usuario);
+    public Usuario AtualizaUsuario();
+    public bool RemoveUsuario();
   }
 }
