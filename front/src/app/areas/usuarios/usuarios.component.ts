@@ -3,6 +3,7 @@ import { Component,  OnInit, } from '@angular/core';
 import { isNgTemplate } from '@angular/compiler';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from 'src/app/models/Usuario';
+import { ConexaoService } from 'src/app/services/conexao.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -22,13 +23,10 @@ export class UsuariosComponent implements OnInit {
 
   public usuarios: Usuario[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private _conexao: ConexaoService) { }
 
   ngOnInit() {
-    this.http.get<any>('../usuarios.json').subscribe(data => {
-      this.usuarios = data.usuarios;
-      console.log(this.usuarios)
-    });
+    this.usuarios = this._conexao.getUsers();
   }
 
   public editar (item: any) {
