@@ -8,6 +8,8 @@ import { CadastroComponent } from './areas/cadastro/cadastro.component';
 import { UsuariosComponent } from './areas/usuarios/usuarios.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ServicosComponent } from './areas/servicos/servicos.component';
+import { ContratacaoComponent } from './areas/contratacao/contratacao.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       NavbarComponent,
       CadastroComponent,
       UsuariosComponent,
+      ServicosComponent,
+      ContratacaoComponent
     ],
     imports: [
       BrowserModule,
