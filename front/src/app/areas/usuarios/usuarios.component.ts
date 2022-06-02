@@ -26,7 +26,7 @@ export class UsuariosComponent implements OnInit {
 
   public sucesso: boolean = false;
 
-  constructor(private api: ApiService, private util: UtilitariosService) { }
+  constructor(private api: ApiService, public util: UtilitariosService) { }
 
   ngOnInit() {
     this.api.get('usuarios').subscribe(
@@ -56,7 +56,8 @@ export class UsuariosComponent implements OnInit {
 
     this.api.post('usuarios/AtualizaUsuario', item).subscribe(
       (dados: any) => {
-        this.usuarios = dados;
+        if (dados !== null || dados !== undefined)
+          alert(`Dados do usuário ${dados.nome} salvos com suscesso.`)
       },
       (error: any) => {
         console.error(error);
@@ -91,12 +92,14 @@ export class UsuariosComponent implements OnInit {
   }
 
   public excluir () {
-    // let i = this.usuarios.findIndex(x => x.cpf == this.cpf);
-    // this.usuarios.splice(i, 1);
 
     this.api.delete('usuarios', this.cpf).subscribe(
       (dados: any) => {
-        console.log(dados);
+        if (dados) {
+          alert('Usuário removido.');
+          let i = this.usuarios.findIndex(x => x.cpf == this.cpf);
+          this.usuarios.splice(i, 1);
+        }
       },
       (error: any) => {
         console.error(error);

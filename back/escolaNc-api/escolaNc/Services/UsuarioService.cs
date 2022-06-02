@@ -1,9 +1,12 @@
+using escolaNc.Data;
 using escolaNc.Excecoes;
 using escolaNc.Interfaces;
 using escolaNc.Models;
+using escolaNc.Utilitarios;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 
@@ -11,36 +14,70 @@ namespace escolaNc.Services
 {
 	public class UsuarioService : IUsuarioService
 	{
+		private EscolaContext _context;
+		public UsuarioService(EscolaContext context)
+		{
+			_context = context;
+		}
 		public List<Usuario> RetornaUsuarios()
 		{
-			List<Usuario> usuarios = new List<Usuario>();
-
-			using (StreamReader r = new StreamReader("./Models/usuarios.csv"))
+			try
 			{
-				while (r.Peek() >= 0)
-				{
-					string u = r.ReadLine();
-					string[] usuario = u.Split(",");
-					usuarios.Add(new Usuario { nome = usuario[0], idade = int.Parse(usuario[1]), cpf = usuario[2], rg = usuario[3], data_nasc = usuario[4], endereco = usuario[5], cidade = usuario[6] });
-				}
+				return _context.Usuarios.ToList();
 			}
-			return usuarios;
+			catch (System.Exception)
+			{
+				throw new Excecao("Não foi possível acessar a base de dados");
+			}
 		}
 
 		public Usuario InsereUsuario(Usuario usuario)
 		{
-			//a fazer: insert no banco de dados do novo usuário
-			throw new Excecao("Não foi possível inserir o usuário na base de dados");
+			try
+			{
+				_context.Usuarios.Add(usuario);
+				_context.SaveChanges();
+				return usuario;
+			}
+			catch (System.Exception)
+			{
+				string cpf = Utilitarios.Utilitarios.formataCpf(usuario.cpf);
+				throw new Excecao($"O usuário com o cpf {cpf} já existe na base de dados");
+			}
 		}
 		public Usuario AtualizaUsuario(Usuario usuario)
 		{
-			//a fazer: update do usuário no bd
-			throw new Excecao("Não foi possível atualizar o usuário na base de dados");
+			if (!_context.Usuarios.Any(u => u.cpf == usuario.cpf))
+				throw new Excecao("Usuário não encontrado no banco de dados");
+
+			try
+			{
+				_context.Usuarios.Update(usuario);
+				_context.SaveChanges();
+				return usuario;
+			}
+			catch (System.Exception)
+			{
+				throw new Excecao("Não foi possível atualizar o usuário na base de dados");
+			}
 		}
 		public bool RemoveUsuario(string cpf)
 		{
-			//a fazer: update do usuário no bd
-			throw new Excecao($"Não foi possível remover o usuário de cpf: {cpf} da base de dados");
+			if (!_context.Usuarios.Any(u => u.cpf == cpf))
+				throw new Excecao("Usuário não encontrado no banco de dados");
+
+			try
+			{
+				var usuario = _context.Usuarios.Find(cpf);
+				_context.Usuarios.Remove(usuario);
+				_context.SaveChanges();
+				return true;
+			}
+			catch (System.Exception)
+			{
+				throw new Excecao($"Não foi possível remover o usuário de cpf: {cpf} da base de dados");
+			}
 		}
 	}
 }
+

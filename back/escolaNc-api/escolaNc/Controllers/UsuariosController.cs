@@ -26,7 +26,14 @@ namespace escolaNc.Controllers
         [HttpGet]
         public IActionResult RetornaUsuarios()
         {
-            return Ok(_usuarioService.RetornaUsuarios());
+			try
+			{
+                return Ok(_usuarioService.RetornaUsuarios());
+			}
+			catch (Exception ex)
+			{
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost, Route("InsereUsuario")]

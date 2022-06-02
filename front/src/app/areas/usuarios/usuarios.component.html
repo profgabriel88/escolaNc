@@ -37,7 +37,7 @@
           <tr class="border-bottom" *ngFor="let item of usuarios; let i = index">
             <td>{{ item.nome }}</td>
             <td>{{ item.idade }}</td>
-            <td class="printCpf">{{ item.cpf }}</td>
+            <td class="printCpf">{{ util.formataCpf(item.cpf) }}</td>
             <td class="printCpf">{{ item.rg }}</td>
             <td>{{ item.data_nasc }}</td>
             <td>{{ item.endereco }}</td>
