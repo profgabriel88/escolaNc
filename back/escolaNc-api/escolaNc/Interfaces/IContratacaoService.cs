@@ -8,5 +8,6 @@ namespace escolaNc.Interfaces
 		public List<DetalhesContratados> RetornaContratados();
 		public List<DetalhesContratados> BuscaUsuarioCpf(string cpf);
 		public List<Servico> RetornaServicos();
+		public bool ContrataServicos(List<Contratados> lista);
 	}
 }

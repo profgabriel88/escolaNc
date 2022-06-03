@@ -15,12 +15,13 @@
     <h2>{{nomeCliente}}</h2>
   </div>
   <div class="grid">
-    <div class="mostraCards"  *ngIf="retorno.length > 1">
+    <div class="mostraCards"  *ngIf="retornou">
       <div class="cards" *ngFor="let item of retorno">
         <div class="card">
           <div class="card-body">
-            <p>Produto: {{item.descricao}}</p>
-            <p>Valor: {{item.preco}}</p>
+            <p><strong>Produto: </strong> {{item.descricao}}</p>
+            <p><strong>Valor: </strong> {{item.preco}}</p>
+            <p><strong>Assinante desde: </strong> {{item.dt_contratacao | date}}</p>
           </div>
         </div>
       </div>
@@ -36,16 +37,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of servicos">
+          <tr *ngFor="let item of servicos; let i = index;">
             <td>{{item.descricao}}</td>
             <td>{{item.preco}}</td>
             <td style="text-align: center;">
-              <input type="checkbox" name="" id="">
+              <input type="checkbox" (input)="insereServico(item.id)" name="" id="">
             </td>
           </tr>
         </tbody>
       </table>
-      <button class="btn btn-lg me-2 btn-outline-success">
+      <button
+        class="btn btn-lg me-2 btn-outline-success"
+        (click)="contrataServico()"
+        >
         <i class="bi bi-cart-check"></i>
       </button>
     </div>

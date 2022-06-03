@@ -39,7 +39,7 @@ namespace escolaNc
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
-				popula.Popula();
+				//popula.Popula();
 			}
 
 			//app.UseHttpsRedirection();

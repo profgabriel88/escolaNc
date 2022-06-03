@@ -63,18 +63,18 @@ export class CadastroComponent implements OnInit {
 
   incluir() {
     let obj = {
-      nome: this.nome,
-      idade: parseInt(this.idade),
-      cpf: this.util.removeMascara(this.cpf),
-      rg: this.rg,
-      data_nasc: this.data_nasc,
-      endereco: this.endereco,
-      cidade: this.cidade
+      nome: this.f.nome.value,
+      idade: parseInt(this.f.idade.value),
+      cpf: this.util.removeMascara(this.f.cpf.value),
+      rg: this.f.rg.value,
+      data_nasc: this.f.data_nasc.value,
+      endereco: this.f.endereco.value,
+      cidade: this.f.cidade.value
     };
 
     this.api.post('usuarios/InsereUsuario', obj).subscribe(
       (dados: any) => {
-        this.usuarios = dados;
+        alert(`Cliente ${dados.nome} cadastrado com sucesso.`)
       },
       (error: any) => {
         console.error(error);

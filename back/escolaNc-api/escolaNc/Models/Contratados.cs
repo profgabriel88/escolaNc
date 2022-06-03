@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace escolaNc.Models
 {
@@ -9,7 +10,7 @@ namespace escolaNc.Models
 		public int id_servicos_contratados { get; set; }
 		public int id_servico { get; set; }
 		public string cpf_usuario { get; set; }
-		public DateTime dt_contratacao { get; set; }
+		public DateTime dt_contratacao { get; set; } = DateTime.Now;
 	}
 
 	public class DetalhesContratados

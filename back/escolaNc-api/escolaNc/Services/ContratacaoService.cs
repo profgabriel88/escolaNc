@@ -52,6 +52,23 @@ namespace escolaNc.Services
 			return contratados;
 		}
 
+		public bool ContrataServicos(List<Contratados> lista)
+		{
+			try
+			{
+				foreach(var contratado in lista)
+				{
+					 _context.SERVICOS_CONTRATADOS.Add(contratado);
+				}
+				_context.SaveChanges();
+				return true;
+			}
+			catch (System.Exception ex)
+			{ 
+				return false;
+			}
+		}
+
 		public List<DetalhesContratados> RetornaContratados()
 		{
 			List<DetalhesContratados> contratados = new List<DetalhesContratados>();

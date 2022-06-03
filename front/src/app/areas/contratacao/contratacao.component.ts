@@ -13,8 +13,11 @@ export class ContratacaoComponent implements OnInit {
 
   public retorno: any[] = [];
   public servicos: any[] = [];
+  public envio: any[] = []
 
+  public retornou: boolean = false;
   public nomeCliente: string = '';
+  public cpf: string = '';
 
   get f(): any {
     return this.form.controls;
@@ -46,13 +49,42 @@ export class ContratacaoComponent implements OnInit {
     )
   }
 
+  contrataServico() {
+    if (this.envio.length == 0) {
+      alert("Selecione ao menos um serviço");
+      return;
+    }
+    this.api.post(`contratacao/contrata/servicos`, this.envio).subscribe(
+      (dados: any) => {
+        alert('Serviços contratados com sucesso.');
+      },
+      (erro: any) => {
+        alert(erro.error);
+      },
+      () => {
+        this.buscaCpf();
+        this.envio = [];
+      }
+    )
+  }
+
+  insereServico(id: number) {
+    this.envio.push({
+      id_servico: id,
+      cpf_usuario: this.cpf
+    })
+
+    console.log(this.envio);
+  }
+
   public buscaCpf() {
     let cpf = this.f.cpf.value;
     this.api.get(`contratacao/${cpf}`).subscribe(
       (dados: any) => {
         this.retorno = dados;
         this.nomeCliente = dados[0].nome;
-        console.log(this.retorno);
+        this.cpf = dados[0].cpf_usuario;
+        this.retornou = dados[0].descricao == null ? false : true;
       },
       (erro: any) => {
         alert(erro.error);

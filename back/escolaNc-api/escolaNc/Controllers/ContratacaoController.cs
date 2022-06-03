@@ -1,5 +1,7 @@
 ﻿using escolaNc.Interfaces;
+using escolaNc.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace escolaNc.Controllers
 {
@@ -37,6 +39,19 @@ namespace escolaNc.Controllers
 			try
 			{
 				return Ok(_contratacaoService.RetornaServicos());
+			}
+			catch (System.Exception ex)
+			{
+				return BadRequest(ex.Message);
+			}
+		}
+
+		[HttpPost, Route("contrata/servicos")]
+		public IActionResult ContrataServicos([FromBody] List<Contratados> lista)
+		{
+			try
+			{
+				return Ok(_contratacaoService.ContrataServicos(lista));
 			}
 			catch (System.Exception ex)
 			{
