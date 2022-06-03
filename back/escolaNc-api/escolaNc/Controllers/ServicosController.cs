@@ -16,6 +16,7 @@ namespace escolaNc.Controllers
 		{
 			_servicoService = servicoService;
 		}
+		[HttpGet]
 		public IActionResult Index()
 		{
 			return Ok(_servicoService.RetornaServicos());

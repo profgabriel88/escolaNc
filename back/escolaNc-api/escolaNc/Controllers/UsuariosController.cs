@@ -1,13 +1,8 @@
 using escolaNc.Interfaces;
-using escolaNc.Services;
 using escolaNc.Models;
-using escolaNc.Excecoes;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace escolaNc.Controllers
 {

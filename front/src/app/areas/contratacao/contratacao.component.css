@@ -1,0 +1,13 @@
+.cards {
+  display: flex;
+  margin: 1rem;
+  flex-direction: row;
+}
+ .card {
+   width: 20rem;
+ }
+
+ .grid {
+   display: grid;
+   grid-template-columns: auto auto;
+ }

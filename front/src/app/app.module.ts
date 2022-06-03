@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { CadastroComponent } from './areas/cadastro/cadastro.component';
 import { UsuariosComponent } from './areas/usuarios/usuarios.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ServicosComponent } from './areas/servicos/servicos.component';
 import { ContratacaoComponent } from './areas/contratacao/contratacao.component';
@@ -25,6 +25,7 @@ import { ContratacaoComponent } from './areas/contratacao/contratacao.component'
       AppRoutingModule,
       FormsModule,
       HttpClientModule,
+      ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
