@@ -48,7 +48,6 @@ namespace escolaNc.Services
 				contratados.Add(new DetalhesContratados { nome = cliente.nome, cpf_usuario = cliente.cpf });
 			}
 
-
 			return contratados;
 		}
 
