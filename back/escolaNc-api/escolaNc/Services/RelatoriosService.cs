@@ -29,9 +29,10 @@ namespace escolaNc.Services
 			dt.Columns.Add("FATURAMENTO", typeof(decimal));
 			
 
+			var retorno = new List<RelFaturamento>();
 			try
-			{ 
-				while(dr.Read())
+			{
+				while (dr.Read())
 				{
 					DataRow linha = dt.NewRow();
 					for(int i = 0; i < dt.Columns.Count; i++)
@@ -39,6 +40,15 @@ namespace escolaNc.Services
 						linha[i] = dr.GetValue(i);
 					}
 					dt.Rows.Add(linha);
+
+					retorno.Add(new RelFaturamento
+					{
+						ID_SERVICO = linha.ItemArray[0].ToString(),
+						DESCRICAO = linha.ItemArray[1].ToString(),
+						ASSINANTES = int.Parse(linha.ItemArray[2].ToString()),
+						VALOR = decimal.Parse(linha.ItemArray[3].ToString()),
+						FATURAMENTO = decimal.Parse(linha.ItemArray[4].ToString())
+					});
 				}
 			}
 			catch (Exception e)
@@ -49,24 +59,6 @@ namespace escolaNc.Services
 			{
 				conexao.Close();
 			}
-
-			var query = from linha in dt.AsEnumerable()
-						select new
-						{
-							linha
-						};
-
-			var retorno = new List<RelFaturamento>();
-			foreach(var q in query)
-			{
-				retorno.Add(new RelFaturamento { 
-					ID_SERVICO = q.linha.ItemArray[0].ToString(), 
-					DESCRICAO = q.linha.ItemArray[1].ToString(),
-					ASSINANTES = int.Parse(q.linha.ItemArray[2].ToString()),
-					VALOR = decimal.Parse(q.linha.ItemArray[3].ToString()),
-					FATURAMENTO = decimal.Parse(q.linha.ItemArray[4].ToString())
-				});
-			}	
 
 			return retorno;
 		}
