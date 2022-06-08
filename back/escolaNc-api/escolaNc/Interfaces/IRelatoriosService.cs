@@ -10,6 +10,6 @@ namespace escolaNc.Interfaces
 {
 	public interface IRelatoriosService
 	{
-		public List<RelFaturamento> ServicosContratados();
+		public List<RelDetalhado> ServicosContratados();
 	}
 }

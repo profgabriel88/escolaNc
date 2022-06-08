@@ -32,6 +32,7 @@ namespace escolaNc
 			services.AddTransient<IServicoService, ServicoService>();
 			services.AddTransient<IContratacaoService, ContratacaoService>();
 			services.AddTransient<IRelatoriosService, RelatoriosService>();
+			services.AddTransient<IAcessoBD, AcessoBD>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
