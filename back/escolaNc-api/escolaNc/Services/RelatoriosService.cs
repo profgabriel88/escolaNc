@@ -29,8 +29,8 @@ namespace escolaNc.Services
 					ID_SERVICO = int.Parse(r.ItemArray[0].ToString()), 
 					DESCRICAO = r.ItemArray[1].ToString(), 
 					ASSINANTES = int.Parse(r.ItemArray[2].ToString()), 
-					VALOR = decimal.Parse(r.ItemArray[0].ToString()), 
-					FATURAMENTO = decimal.Parse(r.ItemArray[0].ToString()), 
+					VALOR = decimal.Parse(r.ItemArray[3].ToString()), 
+					FATURAMENTO = decimal.Parse(r.ItemArray[4].ToString()), 
 				});
 			}
 

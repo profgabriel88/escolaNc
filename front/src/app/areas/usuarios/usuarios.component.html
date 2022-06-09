@@ -19,7 +19,8 @@
   </div>
 
   <div id="conteudo" class="row">
-    <div *ngIf="!edita" class="col-md-12">
+    <!-- <div *ngIf="!edita" class="col-md-12"> -->
+      <div [ngClass]="{'col-md-12' : !edita, 'col-md-6' : edita}">
       <table class="table table-hover">
         <thead>
           <tr>
@@ -62,7 +63,7 @@
         </tbody>
       </table>
     </div>
-    <div *ngIf="edita" class="col-md-6">
+    <!-- <div *ngIf="edita" class="col-md-6">
       <table class="table table-hover">
         <thead>
           <tr>
@@ -104,7 +105,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> -->
     <div *ngIf="edita" class="offset-md-2 col-md-4" style="position: relative">
       <h2>Edição de cadastro</h2>
       <input type="text" [(ngModel)]="nome" class="mt-2 form-control" />

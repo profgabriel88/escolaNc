@@ -35,6 +35,10 @@ export class CadastroComponent implements OnInit {
     private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.iniciaPagina();
+  }
+
+  private iniciaPagina() {
     this.validaForm();
   }
 
@@ -62,6 +66,11 @@ export class CadastroComponent implements OnInit {
   }
 
   incluir() {
+    if (this.f.errors) {
+      alert('Nome é um campo de preenchimento obrigatório');
+      return;
+    }
+
     let obj = {
       nome: this.f.nome.value,
       idade: parseInt(this.f.idade.value),
