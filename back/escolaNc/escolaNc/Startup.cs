@@ -46,6 +46,7 @@ namespace escolaNc
             services.AddTransient<IServicosService, ServicosService>();
             services.AddTransient<IContratacaoService, ContratacaoService>();
             services.AddTransient<IRelatoriosService, RelatoriosService>();
+            services.AddTransient<ILoginService, LoginService>();
             services.AddTransient<IAcessoBD, AcessoBD>();
 ;        }
 

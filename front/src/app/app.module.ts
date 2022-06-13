@@ -9,11 +9,13 @@ import { CadastroComponent } from './areas/cadastro/cadastro.component';
 import { UsuarioComponent } from './areas/usuario/usuario.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
-import { ServicosComponent } from './areas/servicos/servicos/servicos.component';
+import { ServicosComponent } from './areas/servicos/servicos.component';
 import { ContratacaoComponent } from './areas/contratacao/contratacao.component';
 import { RelatoriosComponent } from './areas/relatorios/relatorios.component';
 import { RelFaturamentoComponent } from './areas/relatorios/rel-faturamento/rel-faturamento.component';
 import { RelInadimplentesComponent } from './areas/relatorios/rel-inadimplentes/rel-inadimplentes.component';
+import { LoginComponent } from './areas/login/login.component';
+import { PrincipalComponent } from './areas/principal/principal.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { RelInadimplentesComponent } from './areas/relatorios/rel-inadimplentes/
     ContratacaoComponent,
     RelatoriosComponent,
     RelFaturamentoComponent,
-    RelInadimplentesComponent
+    RelInadimplentesComponent,
+    LoginComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,

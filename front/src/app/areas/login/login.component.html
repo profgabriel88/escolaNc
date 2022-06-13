@@ -1,0 +1,24 @@
+<div *ngIf="!logado" class="container">
+  <div class="flex">
+    <div class="row">
+      <div class="flex-item">
+        <label for="">Nome de usuário</label>
+        <input [(ngModel)]="cpf" type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="flex-item">
+        <label for="">Senha</label>
+        <input [(ngModel)]="senha" type="password" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="flex-item">
+        <button
+          class="btn btn-outline-success"
+          (click)="fazerLogin();"
+          >login</button>
+      </div>
+    </div>
+  </div>
+</div>

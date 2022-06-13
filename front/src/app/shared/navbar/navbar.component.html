@@ -1,6 +1,14 @@
 <div class="flex-box">
-  <a routerLink="usuarios">Usuários</a>
-  <a routerLink="servicos">Serviços</a>
-  <a routerLink="contratacao">Contratação</a>
-  <a routerLink="relatorios">Relatórios</a>
+  <a routerLink="/principal/usuarios">Usuários</a>
+  <a routerLink="/principal/servicos">Serviços</a>
+  <a routerLink="/principal/contratacao">Contratação</a>
+  <a routerLink="/principal/relatorios">Relatórios</a>
+
+  <div class="usuario" (click)="abreDiv();">
+    {{usuario}}
+    <div *ngIf="sair" (click)="logout();" class="sair">
+      Sair?
+    </div>
+  </div>
 </div>
+

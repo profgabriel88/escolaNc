@@ -3,7 +3,7 @@
   flex-direction: row;
 }
 
-a {
+a, .usuario {
   padding: 1em;
   text-decoration: none;
   font-size: 1.5em;
@@ -16,4 +16,13 @@ a:hover {
   font-size: 1.5em;
   color: #353434;
   text-shadow: 1px 1px #5b5959;
+}
+
+.usuario {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.sair {
+  position: absolute;
 }

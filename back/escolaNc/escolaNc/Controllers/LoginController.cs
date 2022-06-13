@@ -1,5 +1,5 @@
 ﻿using escolaNc.Interfaces;
-using escolaNc.Models;
+using escolaNc.Modelos;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -24,6 +24,19 @@ namespace escolaNc.Controllers
 			try
 			{
 				return Ok(_login.Cadastro(login));
+			}
+			catch (Exception e)
+			{
+				return BadRequest(e.Message);
+			}
+		}
+
+		[HttpPost, Route("login")]
+		public IActionResult Login([FromBody] Login login)
+		{
+			try
+			{
+				return Ok(_login.Login(login));
 			}
 			catch (Exception e)
 			{
