@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th>Assinantes</th>
+        <th>Valor</th>
+        <th>Faturamento</th>
+        <th>
+          <button class="btn btn-sm btn-outline-primary">
+            <i class="bi bi-printer"></i>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of retorno">
+        <td>{{item.descricao}}</td>
+        <td>{{item.assinantes}}</td>
+        <td>{{item.valor}}</td>
+        <td>{{item.faturamento}}</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr *ngFor=""></tr>
+    </tbody>
+  </table>
+</div>

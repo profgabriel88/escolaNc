@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Serviços prestados</h2>
+    </div>
+    <div class="offset-md-5 col-md-1">
+      <button *ngIf="!incluir" class="btn btn-sm btn-outline-success" (click)="inclui();">
+        <i class="bi bi-plus"></i>
+      </button>
+      <button *ngIf="incluir" class="btn btn-sm btn-outline-success" (click)="incluir=!incluir;">
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction:row; align-items: center;">
+    <div [ngClass]="{'col-md-12' : !incluir, 'col-md-6' : incluir}">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Descriçao</th>
+            <th>Valor</th>
+            <th style="text-align: right;">Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of servicos">
+            <td>{{item.id}}</td>
+            <td>{{item.descricao}}</td>
+            <td>{{item.preco}}</td>
+            <td style="text-align: right;">
+              <div class="button-group">
+                <button class="me-2 btn btn-sm btn-outline-primary" (click)="edita(item);">
+                  <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-danger" (click)="excluir(item.id);">
+                  <i class="bi bi-x"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="incluir" class="col-md-6">
+      <form [formGroup]="form">
+        <div class="offset-md-1 col-md-11">
+          <input formControlName="descricao" class="form-control my-2" type="text" placeholder="Descrição">
+          <input formControlName="preco" class="form-control my-2" type="text" placeholder="Valor">
+        </div>
+          <div class="offset-md-11">
+          <button class="btn btn-sm btn-outline-success" (click)="inclui(1);">
+            <i class="bi bi-check"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,116 @@
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\appsettings.Development.json
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\appsettings.json
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\escolaNc.exe
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\escolaNc.deps.json
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\escolaNc.runtimeconfig.json
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\escolaNc.runtimeconfig.dev.json
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\escolaNc.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\escolaNc.pdb
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.csproj.AssemblyReference.cache
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.GeneratedMSBuildEditorConfig.editorconfig
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.AssemblyInfoInputs.cache
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.AssemblyInfo.cs
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.csproj.CoreCompileInputs.cache
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.MvcApplicationPartsAssemblyInfo.cs
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.MvcApplicationPartsAssemblyInfo.cache
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\scopedcss\bundle\escolaNc.styles.css
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\staticwebassets\escolaNc.StaticWebAssets.Manifest.cache
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.RazorTargetAssemblyInfo.cache
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.csproj.CopyComplete
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\refint\escolaNc.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.pdb
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.genruntimeconfig.cache
+C:\DEV\Escola\back\escolaNc\escolaNc\obj\Debug\net5.0\ref\escolaNc.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\DEV\Escola\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\appsettings.json
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\escolaNc.exe
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\escolaNc.deps.json
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\escolaNc.runtimeconfig.json
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\escolaNc.runtimeconfig.dev.json
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\escolaNc.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\escolaNc.pdb
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.csproj.AssemblyReference.cache
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.AssemblyInfoInputs.cache
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.AssemblyInfo.cs
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.csproj.CoreCompileInputs.cache
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\scopedcss\bundle\escolaNc.styles.css
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\staticwebassets\escolaNc.StaticWebAssets.Manifest.cache
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.RazorTargetAssemblyInfo.cache
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.csproj.CopyComplete
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\refint\escolaNc.dll
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.pdb
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\escolaNc.genruntimeconfig.cache
+C:\Users\NCONTROL\Documents\Nova pasta\back\escolaNc\escolaNc\obj\Debug\net5.0\ref\escolaNc.dll

@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <input [(ngModel)]="cpf" class="form-control" placeholder="CPF">
+    </div>
+    <div class="col-lg-2">
+      <button class="btn btn-sm btn-outline-primary"
+      (click)="pesquisa();"
+      >
+      <i class="bi bi-search"></i>
+    </button>
+  </div>
+</div>
+<div id="conteudo">
+
+  <table *ngIf="mostraTabela" class="table table-hover">
+    <thead>
+      <tr>
+        <th>CPF</th>
+        <th>Nome</th>
+        <th>Serviço</th>
+        <th>Valor</th>
+        <th>
+          <button class="btn btn-sm btn-outline-primary"
+            (click)="imprimir('conteudo');"
+          >
+            <i class="bi bi-printer"></i>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of retorno">
+        <td>{{item.CPF}}</td>
+        <td>{{item.NOME}}</td>
+        <td>{{item.DESCRICAO}}</td>
+        <td style="text-align: right;">{{item.PRECO}}</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr *ngFor=""></tr>
+    </tbody>
+  </table>
+</div>
+</div>
