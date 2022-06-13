@@ -33,7 +33,8 @@ namespace escolaNc.Servicos
                                u.cpf,
                                s.descricao,
                                s.preco,
-                               c.dt_contratacao
+                               c.dt_contratacao,
+                               c.id_servicos_contratados
                            };
 
             foreach (var c in consulta)
@@ -44,7 +45,8 @@ namespace escolaNc.Servicos
                     cpf_usuario = c.cpf,
                     descricao = c.descricao,
                     preco = c.preco,
-                    dt_contratacao = c.dt_contratacao
+                    dt_contratacao = c.dt_contratacao,
+                    id_servicos_contratados = c.id_servicos_contratados
                 });
             }
 
@@ -80,6 +82,21 @@ namespace escolaNc.Servicos
             }
         }
 
+        public bool ExcluiServico(int id)
+        {
+            try
+            {
+                var servico = _context.SERVICOS_CONTRATADOS.Find(id);
+                _context.SERVICOS_CONTRATADOS.Remove(servico);
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                throw new Excecao("Não foi possível excluir o serviço.");
+            }
+        }
+
         public List<Detalhes> RetornaContratados()
         {
             List<Detalhes> detalhes = new List<Detalhes>();
@@ -95,7 +112,8 @@ namespace escolaNc.Servicos
                                u.cpf,
                                s.descricao,
                                s.preco,
-                               c.dt_contratacao
+                               c.dt_contratacao,
+                               c.id_servicos_contratados
                            };
 
             foreach(var c in consulta)
@@ -106,7 +124,8 @@ namespace escolaNc.Servicos
                     cpf_usuario = c.cpf,
                     descricao = c.descricao,
                     preco = c.preco,
-                    dt_contratacao = c.dt_contratacao
+                    dt_contratacao = c.dt_contratacao,
+                    id_servicos_contratados = c.id_servicos_contratados
                 });
             }
             return detalhes;

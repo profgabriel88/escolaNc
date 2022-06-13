@@ -64,7 +64,7 @@ namespace escolaNc.Servicos
             string hashSenha = "";
             using (HashAlgorithm mySHA256 = SHA256.Create())
             {
-                hashValue = mySHA256.ComputeHash(Encoding.UTF8.GetBytes(senha));
+                hashValue = mySHA256.ComputeHash(Encoding.UTF8.GetBytes("15503UM54L"+senha));
             }
 
             foreach (byte b in hashValue)

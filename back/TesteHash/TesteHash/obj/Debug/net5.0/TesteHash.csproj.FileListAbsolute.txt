@@ -1,0 +1,16 @@
+C:\DEV\Escola\back\TesteHash\TesteHash\bin\Debug\net5.0\TesteHash.exe
+C:\DEV\Escola\back\TesteHash\TesteHash\bin\Debug\net5.0\TesteHash.deps.json
+C:\DEV\Escola\back\TesteHash\TesteHash\bin\Debug\net5.0\TesteHash.runtimeconfig.json
+C:\DEV\Escola\back\TesteHash\TesteHash\bin\Debug\net5.0\TesteHash.runtimeconfig.dev.json
+C:\DEV\Escola\back\TesteHash\TesteHash\bin\Debug\net5.0\TesteHash.dll
+C:\DEV\Escola\back\TesteHash\TesteHash\bin\Debug\net5.0\TesteHash.pdb
+C:\DEV\Escola\back\TesteHash\TesteHash\obj\Debug\net5.0\TesteHash.csproj.AssemblyReference.cache
+C:\DEV\Escola\back\TesteHash\TesteHash\obj\Debug\net5.0\TesteHash.GeneratedMSBuildEditorConfig.editorconfig
+C:\DEV\Escola\back\TesteHash\TesteHash\obj\Debug\net5.0\TesteHash.AssemblyInfoInputs.cache
+C:\DEV\Escola\back\TesteHash\TesteHash\obj\Debug\net5.0\TesteHash.AssemblyInfo.cs
+C:\DEV\Escola\back\TesteHash\TesteHash\obj\Debug\net5.0\TesteHash.csproj.CoreCompileInputs.cache
+C:\DEV\Escola\back\TesteHash\TesteHash\obj\Debug\net5.0\TesteHash.dll
+C:\DEV\Escola\back\TesteHash\TesteHash\obj\Debug\net5.0\refint\TesteHash.dll
+C:\DEV\Escola\back\TesteHash\TesteHash\obj\Debug\net5.0\TesteHash.pdb
+C:\DEV\Escola\back\TesteHash\TesteHash\obj\Debug\net5.0\TesteHash.genruntimeconfig.cache
+C:\DEV\Escola\back\TesteHash\TesteHash\obj\Debug\net5.0\ref\TesteHash.dll

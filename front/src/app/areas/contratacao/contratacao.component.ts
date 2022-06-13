@@ -40,7 +40,6 @@ export class ContratacaoComponent implements OnInit {
       servico.check = false;
       this.servicosCheck.push(servico);
     });
-    console.table(this.servicosCheck);
   }
 
   public carregaServicos() {
@@ -59,8 +58,6 @@ export class ContratacaoComponent implements OnInit {
         this.retorno = dados;
         const v = this.retorno.find((e: any) => e.descricao == 'VAZIO');
         this.verifica = (v?.descricao == 'VAZIO') ? true : false;
-        console.table(this.retorno);
-        console.log(this.verifica);
       },
       error: erro => alert(erro.error)
     })
@@ -68,6 +65,16 @@ export class ContratacaoComponent implements OnInit {
 
   public insereServico(item: any) {
     item.check = !item.check;
+  }
+
+  excluir(id: any) {
+    this.api.delete('contratacao', id).subscribe({
+      next: dados => {
+        alert('Serviço excluido com sucesso');
+        this.buscaCpf();
+      },
+      error: erro => alert(erro.error)
+    })
   }
 
   public contrataServico() {

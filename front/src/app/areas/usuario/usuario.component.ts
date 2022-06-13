@@ -34,7 +34,6 @@ private confereCpf = null;
     this.api.get(`usuarios`).subscribe(
       (dados: any) => {
         this.usuarios = dados;
-        console.table(this.usuarios);
       },
       (erro: any) => {
         alert(erro.error);

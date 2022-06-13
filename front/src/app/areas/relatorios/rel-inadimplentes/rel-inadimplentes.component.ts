@@ -32,7 +32,6 @@ export class RelInadimplentesComponent implements OnInit {
       },
       error: erro => alert(erro.error)
     });
-    console.table(this.retorno);
   }
 
   public imprimir(obj: string) {

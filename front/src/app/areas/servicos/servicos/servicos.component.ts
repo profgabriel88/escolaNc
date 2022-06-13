@@ -68,7 +68,6 @@ export class ServicosComponent implements OnInit {
   public inclui(valor = 0) {
     if (valor == 0) {
       this.incluir = true;
-      console.log(this.incluir);
       this.validaForm();
       this.caminho = 'inserir'
     }

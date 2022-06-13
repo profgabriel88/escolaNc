@@ -23,7 +23,10 @@
               <strong>Assinante desde: </strong>{{ item.dt_contratacao | date }}
             </p>
             <div style="display: flex; justify-content: flex-end;">
-              <button class="btn btn-sm me-2 btn-outline-danger" >
+              <button
+              class="btn btn-sm me-2 btn-outline-danger"
+              (click)="excluir(item.id_servicos_contratados);"
+              >
                 <i class="bi bi-x"></i>
               </button>
             </div>

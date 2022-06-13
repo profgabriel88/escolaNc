@@ -14,6 +14,7 @@ namespace escolaNc.Modelos
 
     public class Detalhes
     {
+        public int id_servicos_contratados { get; set; }
         public string cpf_usuario { get; set; }
         public string nome { get; set; }
         public decimal preco { get; set; }

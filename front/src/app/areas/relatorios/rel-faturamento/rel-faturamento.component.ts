@@ -19,7 +19,6 @@ export class RelFaturamentoComponent implements OnInit {
       },
       error: erro => alert(erro.error)
     });
-    console.table(this.retorno);
   }
 
 }

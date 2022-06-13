@@ -66,5 +66,18 @@ namespace escolaNc.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult ExcluiServico(int id)
+        {
+            try
+            {
+                return Ok(_contratacaoService.ExcluiServico(id));
+            }
+            catch (System.Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }
