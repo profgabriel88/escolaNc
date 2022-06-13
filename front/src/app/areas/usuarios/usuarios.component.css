@@ -1,0 +1,35 @@
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.flex-item {
+  margin-left: auto;
+}
+
+.printCpf {
+  white-space: nowrap;
+}
+
+#linha {
+  display: none;
+}
+
+@media print {
+  @page { size: A4;  margin: 5mm 5mm 5mm 5mm; }
+
+  .printCpf {
+    white-space: nowrap;
+  }
+
+  .container {
+    font-size: 0.70em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .printNone {
+    display: none;
+  }
+  #linha {
+    display:contents;
+  }
+}

@@ -1,0 +1,102 @@
+<div class="container">
+  <form [formGroup]="form">
+    <h2>Inserir Usuário</h2>
+    <div class="row">
+      <div class="col-lg-10">
+        <input
+          type="text"
+          [ngClass]="{'is-invalid': f.nome.errors && f.nome.touched}"
+          formControlName="nome"
+          class="mt-2 form-control"
+          placeholder="Nome"
+        />
+        <div *ngIf="f.nome.errors?.required" class="invalid-feedback">campo de preenchimento obrigatório</div>
+      </div>
+      <div class="col-lg-2">
+        <input
+          type="text"
+          [ngClass]="{'is-invalid': f.idade.errors && f.idade.touched}"
+          formControlName="idade"
+          class="mt-2 form-control"
+          placeholder="Idade"
+        />
+        <div *ngIf="f.idade.errors?.required" class="invalid-feedback">campo de preenchimento obrigatório</div>
+        <div *ngIf="f.idade.errors?.pattern" class="invalid-feedback">idade deve ser um número</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-5">
+        <input
+          type="text"
+          [ngClass]="{'is-invalid': f.cpf.errors && f.cpf.touched }"
+          formControlName="cpf"
+          value="{{f.cpf.value}}"
+          class="mt-2 form-control is-invalid"
+          placeholder="CPF"
+          (input)="formataCampos();"
+          maxlength="14"
+        />
+        <div *ngIf="f.cpf.errors?.required" class="invalid-feedback">campo de preenchimento obrigatório</div>
+        <div *ngIf="f.cpf.errors?.minlength || f.cpf.errors?.maxlength" class="invalid-feedback">cpf deve ter onze caracteres</div>
+      </div>
+      <div class="col-lg-3">
+        <input
+          type="text"
+          [ngClass]="{'is-invalid': f.rg.errors && f.rg.touched}"
+          formControlName="rg"
+          class="mt-2 form-control"
+          placeholder="RG"
+        />
+        <div *ngIf="f.rg.errors?.required" class="invalid-feedback">campo de preenchimento obrigatório</div>
+      </div>
+      <div class="col-lg-4">
+        <input
+          type="text"
+          [ngClass]="{'is-invalid': f.data_nasc.errors && f.data_nasc.touched}"
+          formControlName="data_nasc"
+          value="{{f.data_nasc.value}}"
+          class="mt-2 form-control"
+          (input)="formataCampos()"
+          placeholder="Data de Nascimento"
+          (input)="formataCampos();"
+          maxlength="10"
+        />
+        <div *ngIf="f.data_nasc.errors?.required" class="invalid-feedback">campo de preenchimento obrigatório</div>
+        <div *ngIf="f.data_nasc.errors?.minlength || f.data_nasc.errors?.maxlength" class="invalid-feedback">data inválida</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-7">
+        <input
+          type="text"
+          [ngClass]="{'is-invalid': f.endereco.errors && f.endereco.touched}"
+          formControlName="endereco"
+          class="mt-2 form-control"
+          placeholder="Endereço"
+        />
+        <div *ngIf="f.endereco.errors?.required" class="invalid-feedback">campo de preenchimento obrigatório</div>
+      </div>
+      <div class="col-lg-5">
+        <input
+          type="text"
+          [ngClass]="{'is-invalid': f.cidade.errors && f.cidade.touched}"
+          formControlName="cidade"
+          class="mt-2 form-control"
+          placeholder="Cidade"
+        />
+        <div *ngIf="f.cidade.errors?.required" class="invalid-feedback">campo de preenchimento obrigatório</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-1 offset-lg-11">
+        <button
+
+          class="mt-2 btn btnsm btn-outline-success form-control"
+          (click)="incluir()"
+        >
+          <i class="bi bi-check2"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

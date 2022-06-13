@@ -1,0 +1,57 @@
+<div class="container">
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="col-lg-5">
+        <input class="form-control" type="text" formControlName="cpf" placeholder="Busca CPF">
+      </div>
+      <div class="col-lg-2">
+        <button class="btn btn-outline-success" (click)="buscaCpf();">
+          <i class="bi bi-check2"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="cliente mt-4" *ngIf="retorno.length > 0">
+    <h2>{{nomeCliente}}</h2>
+  </div>
+  <div class="grid">
+    <div class="mostraCards"  *ngIf="retornou">
+      <div class="cards" *ngFor="let item of retorno">
+        <div class="card">
+          <div class="card-body">
+            <p><strong>Produto: </strong> {{item.descricao}}</p>
+            <p><strong>Valor: </strong> {{item.preco}}</p>
+            <p><strong>Assinante desde: </strong> {{item.dt_contratacao | date}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contratacao" *ngIf="retorno.length > 0">
+      <h3>Serviços disponíveis</h3>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <td>Tipo</td>
+            <td>Preço</td>
+            <td style="text-align: center;">Selecionar</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of servicosCheck; let i = index;">
+            <td>{{item.descricao}}</td>
+            <td>{{item.preco}}</td>
+            <td style="text-align: center;">
+              <input type="checkbox" [checked]="item.false" (input)="insereServico(item)" name="" id="">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button
+        class="btn btn-lg me-2 btn-outline-success"
+        (click)="contrataServico()"
+        >
+        <i class="bi bi-cart-check"></i>
+      </button>
+    </div>
+  </div>
+</div>
