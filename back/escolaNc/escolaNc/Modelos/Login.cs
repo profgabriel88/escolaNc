@@ -9,6 +9,7 @@ namespace escolaNc.Modelos
 	public class Login
 	{
 		public string nome { get; set; }
+		public string unome { get; set; }
 		
 		[Key]
 		public string cpf { get; set; }

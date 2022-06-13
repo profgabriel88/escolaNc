@@ -6,7 +6,7 @@ import { ContratacaoComponent } from './areas/contratacao/contratacao.component'
 import { LoginComponent } from './areas/login/login.component';
 import { PrincipalComponent } from './areas/principal/principal.component';
 import { RelatoriosComponent } from './areas/relatorios/relatorios.component';
-import { ServicosComponent } from './areas/servicos/servicos.component';
+import { ServicosComponent } from './areas/servicos/servicos/servicos.component';
 import { UsuarioComponent } from './areas/usuario/usuario.component';
 
 const routes: Routes = [

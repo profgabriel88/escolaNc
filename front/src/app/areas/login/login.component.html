@@ -1,8 +1,20 @@
 <div *ngIf="!logado" class="container">
   <div class="flex">
+    <div *ngIf="pAcesso" class="row">
+      <div class="flex-item">
+        <label for="">Primeiro nome</label>
+        <input [(ngModel)]="nome" type="text" class="form-control">
+      </div>
+    </div>
+    <div *ngIf="pAcesso"  class="row">
+      <div class="flex-item">
+        <label for="">Último nome</label>
+        <input [(ngModel)]="unome" type="text" class="form-control">
+      </div>
+    </div>
     <div class="row">
       <div class="flex-item">
-        <label for="">Nome de usuário</label>
+        <label for="">CPF</label>
         <input [(ngModel)]="cpf" type="text" class="form-control">
       </div>
     </div>
@@ -17,8 +29,13 @@
         <button
           class="btn btn-outline-success"
           (click)="fazerLogin();"
-          >login</button>
+          >{{textoBotao}}</button>
       </div>
     </div>
+  </div>
+  <div class="acesso">
+    <button class="btn btn-outline-dark my-4" (click)="acesso();">
+      Ainda não é cadastrado?
+    </button>
   </div>
 </div>

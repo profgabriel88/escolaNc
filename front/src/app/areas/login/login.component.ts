@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewContainerRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SubscriptionLoggable } from 'rxjs/internal/testing/SubscriptionLoggable';
 import { ApiService } from 'src/services/api.service';
 import { LoginServiceService } from 'src/services/login-service.service';
 
@@ -14,12 +13,22 @@ export class LoginComponent implements OnInit {
 
   cpf = ''
   senha = ''
+  nome = '';
+  unome = '';
+
+  textoBotao = 'login';
+
+  caminho = 'login/login';
+  navegacao = '/principal';
+
   logado = false;
+  pAcesso = false;
 
   constructor(
     private api: ApiService,
     private router: Router,
-    private loginService: LoginServiceService
+    private loginService: LoginServiceService,
+    private viewContainer: ViewContainerRef
     ) { }
 
   ngOnInit() {
@@ -28,7 +37,8 @@ export class LoginComponent implements OnInit {
 
   fazerLogin() {
     let user = {
-      nome: '',
+      nome: this.nome,
+      unome: this.unome,
       cpf: this.cpf,
       hash_senha: this.senha
     }
@@ -38,15 +48,26 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.api.post('login/login', user).subscribe({
+    this.api.post(this.caminho, user).subscribe({
       next: dados => {
         this.logado = true;
-        this.loginService.salvaUsuarioLogado(dados);
-        this.router.navigate(['/principal']);
+        this.router.navigate([this.navegacao]);
+        if (this.navegacao != '/principal' )
+          alert('Usuário cadastrado com sucesso');
+
+        if (this.navegacao == '/principal' )
+          this.loginService.salvaUsuarioLogado(dados);
       },
       error: erro => {
         alert(erro.error);
       }
     })
+  }
+
+  acesso() {
+    this.pAcesso = true;
+    this.textoBotao = 'Enviar';
+    this.caminho = 'login/cadastro';
+    this.navegacao = '/login';
   }
 }
