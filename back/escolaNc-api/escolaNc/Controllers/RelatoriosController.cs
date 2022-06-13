@@ -14,10 +14,23 @@ namespace escolaNc.Controllers
 			_relService = relService;
 		}
 
-		[HttpGet]
-		public IActionResult Index()
+		[HttpGet, Route("faturamento")]
+		public IActionResult Faturamento()
 		{
 			return Ok(_relService.ServicosContratados());
+		}
+
+		[HttpGet, Route("inadimplentes")]
+		public IActionResult Inadimplentes(string cpf)
+		{
+			return Ok(_relService.Inadimplentes(cpf));
+
+		}
+		[HttpGet, Route("inadimplentes/{cpf?}")]
+		public IActionResult InadimplentesCpf(string cpf)
+		{
+			return Ok(_relService.Inadimplentes(cpf));
+
 		}
 	}
 }

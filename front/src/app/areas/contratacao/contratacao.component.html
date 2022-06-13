@@ -37,11 +37,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of servicos; let i = index;">
+          <tr *ngFor="let item of servicosCheck; let i = index;">
             <td>{{item.descricao}}</td>
             <td>{{item.preco}}</td>
             <td style="text-align: center;">
-              <input type="checkbox" (input)="insereServico(item.id)" name="" id="">
+              <input type="checkbox" [checked]="item.false" (input)="insereServico(item)" name="" id="">
             </td>
           </tr>
         </tbody>

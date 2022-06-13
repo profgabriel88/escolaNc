@@ -11,5 +11,6 @@ namespace escolaNc.Interfaces
 	public interface IRelatoriosService
 	{
 		public List<RelDetalhado> ServicosContratados();
+		public string Inadimplentes(string cpf);
 	}
 }

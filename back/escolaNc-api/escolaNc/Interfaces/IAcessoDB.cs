@@ -9,5 +9,6 @@ namespace escolaNc.Interfaces
 	public interface IAcessoBD
 	{
 		public DataTable ExecutaProc(string Procedure);
+		public DataTable ExecutaProc(string Procedure, Dictionary<Object, Object> Parametros);
 	}
 }

@@ -6,6 +6,7 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 using escolaNc.Models;
 using escolaNc.Data;
+using Newtonsoft.Json;
 
 namespace escolaNc.Services
 {
@@ -35,6 +36,25 @@ namespace escolaNc.Services
 			}
 
 			return retorno;
+		}
+
+		public string Inadimplentes(string cpf)
+		{
+			Dictionary<Object, Object> Parametros = new Dictionary<Object, Object>(); 
+			Parametros.Add( "@CPF", cpf );
+
+			DataTable dt = new DataTable();
+
+			if (string.IsNullOrEmpty(cpf))
+				dt = _acesso.ExecutaProc("dbo.RETORNA_INADIMPLENTES");
+			else
+				dt = _acesso.ExecutaProc("dbo.RETORNA_INADIMPLENTES", Parametros);
+
+			string JSONString = string.Empty;
+
+			JSONString = JsonConvert.SerializeObject(dt);
+
+			return JSONString;
 		}
 	}
 }

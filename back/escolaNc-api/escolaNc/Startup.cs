@@ -25,6 +25,7 @@ namespace escolaNc
 			services.AddDbContext<EscolaContext>(
 				context => context.UseSqlServer(Configuration.GetConnectionString("Default"))	
 			);
+
 			services.AddScoped<PopulaBancoService>();
 			services.AddCors();
 			services.AddControllers();
@@ -32,6 +33,7 @@ namespace escolaNc
 			services.AddTransient<IServicoService, ServicoService>();
 			services.AddTransient<IContratacaoService, ContratacaoService>();
 			services.AddTransient<IRelatoriosService, RelatoriosService>();
+			services.AddTransient<ILoginService, LoginService>();
 			services.AddTransient<IAcessoBD, AcessoBD>();
 		}
 

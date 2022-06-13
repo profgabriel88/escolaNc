@@ -1,4 +1,6 @@
+import { createInjectableDefinitionMap } from '@angular/compiler/src/render3/partial/injectable';
 import { Component, OnInit } from '@angular/core';
+import { resetFakeAsyncZone } from '@angular/core/testing';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from 'src/services/api.service';
 
@@ -12,7 +14,8 @@ export class ContratacaoComponent implements OnInit {
   form!: FormGroup;
 
   public retorno: any[] = [];
-  public servicos: any[] = [];
+  public retornoServicos: any[] = [];
+  public servicosCheck: any[] = [];
   public envio: any[] = []
 
   public retornou: boolean = false;
@@ -32,16 +35,33 @@ export class ContratacaoComponent implements OnInit {
     this.carregaServicos();
   }
 
+  reset() {
+    this.retorno = [];
+    this.servicosCheck = [];
+    this.envio = [];
+    this.validaCheck();
+    this.buscaCpf();
+  }
+
   private validaForm() {
     this.form = this.fb.group({
       cpf: ''
     })
   }
 
+  public validaCheck() {
+    this.retornoServicos.forEach(servico => {
+      servico.check = false;
+      this.servicosCheck.push(servico);
+    });
+    console.table(this.servicosCheck);
+  }
+
   public carregaServicos() {
     this.api.get(`contratacao/busca/servicos`).subscribe(
       (dados: any) => {
-        this.servicos = dados;
+        this.retornoServicos = dados;
+        this.validaCheck();
       },
       (erro: any) => {
         alert(erro.error);
@@ -50,10 +70,19 @@ export class ContratacaoComponent implements OnInit {
   }
 
   contrataServico() {
+    this.servicosCheck.forEach(servico => {
+      if(servico.check)
+        this.envio.push({
+          id_servico: servico.id,
+          cpf_usuario: this.cpf
+        });
+    })
+
     if (this.envio.length == 0) {
-      alert("Selecione ao menos um serviço");
+      alert('Selecione ao menos um serviço');
       return;
     }
+
     this.api.post(`contratacao/contrata/servicos`, this.envio).subscribe(
       (dados: any) => {
         alert('Serviços contratados com sucesso.');
@@ -62,19 +91,14 @@ export class ContratacaoComponent implements OnInit {
         alert(erro.error);
       },
       () => {
-        this.buscaCpf();
-        this.envio = [];
+        this.reset();
       }
     )
   }
 
-  insereServico(id: number) {
-    this.envio.push({
-      id_servico: id,
-      cpf_usuario: this.cpf
-    })
-
-    console.log(this.envio);
+  insereServico(item: any) {
+    item.check = !item.check;
+    console.log(this.servicosCheck);
   }
 
   public buscaCpf() {
