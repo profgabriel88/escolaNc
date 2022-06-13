@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './areas/cadastro/cadastro.component';
 import { ContratacaoComponent } from './areas/contratacao/contratacao.component';
-import { ServicosComponent } from './areas/servicos/servicos.component';
-import { UsuariosComponent } from './areas/usuarios/usuarios.component';
+import { RelatoriosComponent } from './areas/relatorios/relatorios.component';
+import { ServicosComponent } from './areas/servicos/servicos/servicos.component';
+import { UsuarioComponent } from './areas/usuario/usuario.component';
 
 const routes: Routes = [
-  { path: 'cadastro', component: CadastroComponent},
-  { path: 'usuarios', component: UsuariosComponent},
-  { path: 'servicos', component: ServicosComponent},
-  { path: 'contratacao', component: ContratacaoComponent}
+  {path: 'usuarios', component: UsuarioComponent},
+  {path: 'cadastro', component: CadastroComponent},
+  {path: 'servicos', component: ServicosComponent},
+  {path: 'contratacao', component: ContratacaoComponent},
+  {path: 'relatorios', component: RelatoriosComponent},
 ];
 
 @NgModule({

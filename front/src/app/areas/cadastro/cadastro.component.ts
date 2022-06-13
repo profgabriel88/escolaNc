@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/services/api.service';
-import { UtilitariosService } from 'src/services/utilitarios.service';
-// import {  }
+
 
 @Component({
   selector: 'app-cadastro',
@@ -14,35 +13,31 @@ export class CadastroComponent implements OnInit {
 
   public form!: FormGroup;
 
+  // nome: string = '';
+  // idade: number = 0;
+  // cpf: string = '';
+  // rg: string = '';
+  // data_nasc: string = '';
+  // endereco: string = '';
+  // cidade: string = '';
+
+  public salvo: boolean = false;
+
   get f(): any {
     return this.form.controls;
   }
-
-  public nome: string = '';
-  public idade: string = '';
-  public cpf: string = '';
-  public rg: string = '';
-  public data_nasc: string = '';
-  public endereco: string = '';
-  public cidade: string = '';
-  public usuarios = []
-
-  public toastMsg = 'abacaxi';
-
-  constructor(
-    private api: ApiService,
-    private util: UtilitariosService,
-    private fb: FormBuilder) { }
-
   ngOnInit() {
-    this.iniciaPagina();
-  }
-
-  private iniciaPagina() {
     this.validaForm();
   }
 
-  private validaForm() {
+  constructor(
+    private api: ApiService,
+    private fb: FormBuilder,
+    private toastr: ToastrService
+  ) { }
+
+
+  public validaForm() {
     this.form = this.fb.group({
       nome: ['', Validators.required],
       idade: ['', [
@@ -51,49 +46,25 @@ export class CadastroComponent implements OnInit {
       ]],
       cpf: ['', [
         Validators.required,
-        Validators.minLength(14),
-        Validators.maxLength(14)]
+        ]
       ],
       rg: ['', Validators.required],
-      data_nasc: ['',[
-        Validators.required,
-        Validators.minLength(10),
-        Validators.maxLength(10)]
-      ],
+      data_nasc: ['', Validators.required],
       endereco: ['', Validators.required],
-      cidade: ['', Validators.required],
+      cidade: ['', Validators.required]
     });
   }
 
-  incluir() {
-    if (this.f.errors) {
-      alert('Nome é um campo de preenchimento obrigatório');
-      return;
-    }
-
-    let obj = {
-      nome: this.f.nome.value,
-      idade: parseInt(this.f.idade.value),
-      cpf: this.util.removeMascara(this.f.cpf.value),
-      rg: this.f.rg.value,
-      data_nasc: this.f.data_nasc.value,
-      endereco: this.f.endereco.value,
-      cidade: this.f.cidade.value
-    };
-
-    this.api.post('usuarios/InsereUsuario', obj).subscribe(
+  public incluir() {
+    this.api.post('usuarios/inserir', this.form.value).subscribe(
       (dados: any) => {
-        alert(`Cliente ${dados.nome} cadastrado com sucesso.`)
+        if(dados !== null || dados !== undefined) {
+        alert(`Usuário ${dados.nome} cadastrado com sucesso`);
+        }
       },
       (error: any) => {
-        console.error(error);
         alert(error.error);
       }
     )
-  }
-
-  formataCampos() {
-    this.f.cpf.value = this.util.formataCpf(this.f.cpf.value);
-    this.f.data_nasc.value = this.util.formataData(this.f.data_nasc.value);
   }
 }

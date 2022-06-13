@@ -3,24 +3,23 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
 
-constructor(private http: HttpClient) { }
+  public url = 'http://localhost:5000';
 
-public url = 'http://localhost:5000'
+  constructor(private http: HttpClient) {}
 
-public get(caminho: string): Observable<any> {
-  return this.http.get<any>(`${this.url}/${caminho}`);
-}
+  public get(caminho: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/${caminho}`);
+  }
 
-public post(caminho: string, obj: any): Observable<any> {
-  return this.http.post<any>(`${this.url}/${caminho}`, obj);
-}
+  public post(caminho: string, obj: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/${caminho}`, obj);
+  }
 
-public delete(caminho: string, cpf: string): Observable<any> {
-  return this.http.delete<boolean>(`${this.url}/${caminho}/${cpf}`);
-}
-
+  public delete(caminho: string, id: string): Observable<any> {
+    return this.http.delete<any>(`${this.url}/${caminho}/${id}`);
+  }
 }

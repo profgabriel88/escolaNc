@@ -1,7 +1,5 @@
-import { createInjectableDefinitionMap } from '@angular/compiler/src/render3/partial/injectable';
 import { Component, OnInit } from '@angular/core';
-import { resetFakeAsyncZone } from '@angular/core/testing';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ApiService } from 'src/services/api.service';
 
 @Component({
@@ -11,46 +9,34 @@ import { ApiService } from 'src/services/api.service';
 })
 export class ContratacaoComponent implements OnInit {
 
-  form!: FormGroup;
+  public cpf = '';
 
-  public retorno: any[] = [];
-  public retornoServicos: any[] = [];
-  public servicosCheck: any[] = [];
-  public envio: any[] = []
+  public retorno: any = [];
+  public servicos: any = [];
+  public servicosCheck: any =[];
+  public envio: any = [];
 
-  public retornou: boolean = false;
-  public nomeCliente: string = '';
-  public cpf: string = '';
-
-  get f(): any {
-    return this.form.controls;
-  }
+  public verifica: boolean = false;
 
   constructor(
-    private fb: FormBuilder,
-    private api: ApiService) { }
+    private api: ApiService
+  ) { }
 
   ngOnInit() {
-    this.validaForm();
     this.carregaServicos();
   }
 
-  reset() {
+  public reset() {
     this.retorno = [];
     this.servicosCheck = [];
     this.envio = [];
     this.validaCheck();
-    this.buscaCpf();
+    if (this.cpf !== '')
+      this.buscaCpf();
   }
 
-  private validaForm() {
-    this.form = this.fb.group({
-      cpf: ''
-    })
-  }
-
-  public validaCheck() {
-    this.retornoServicos.forEach(servico => {
+  validaCheck() {
+    this.servicos.forEach((servico: any) => {
       servico.check = false;
       this.servicosCheck.push(servico);
     });
@@ -58,34 +44,49 @@ export class ContratacaoComponent implements OnInit {
   }
 
   public carregaServicos() {
-    this.api.get(`contratacao/busca/servicos`).subscribe(
-      (dados: any) => {
-        this.retornoServicos = dados;
+    this.api.get('contratacao/servicos').subscribe({
+      next: dados => {
+        this.servicos = dados;
         this.validaCheck();
       },
-      (erro: any) => {
-        alert(erro.error);
-      }
-    )
+      error: erro => alert(erro.error)
+    })
   }
 
-  contrataServico() {
-    this.servicosCheck.forEach(servico => {
-      if(servico.check)
+  public buscaCpf() {
+    this.api.get(`contratacao/${this.cpf}`).subscribe({
+      next: dados => {
+        this.retorno = dados;
+        const v = this.retorno.find((e: any) => e.descricao == 'VAZIO');
+        this.verifica = (v?.descricao == 'VAZIO') ? true : false;
+        console.table(this.retorno);
+        console.log(this.verifica);
+      },
+      error: erro => alert(erro.error)
+    })
+  }
+
+  public insereServico(item: any) {
+    item.check = !item.check;
+  }
+
+  public contrataServico() {
+    this.servicosCheck.forEach((servico: any) => {
+      if(servico.check) {
         this.envio.push({
           id_servico: servico.id,
           cpf_usuario: this.cpf
         });
+      }
     })
 
     if (this.envio.length == 0) {
       alert('Selecione ao menos um serviço');
       return;
     }
-
-    this.api.post(`contratacao/contrata/servicos`, this.envio).subscribe(
+    this.api.post('contratacao', this.envio).subscribe(
       (dados: any) => {
-        alert('Serviços contratados com sucesso.');
+        alert('Serviços contratados')
       },
       (erro: any) => {
         alert(erro.error);
@@ -94,25 +95,6 @@ export class ContratacaoComponent implements OnInit {
         this.reset();
       }
     )
-  }
-
-  insereServico(item: any) {
-    item.check = !item.check;
-    console.log(this.servicosCheck);
-  }
-
-  public buscaCpf() {
-    let cpf = this.f.cpf.value;
-    this.api.get(`contratacao/${cpf}`).subscribe(
-      (dados: any) => {
-        this.retorno = dados;
-        this.nomeCliente = dados[0].nome;
-        this.cpf = dados[0].cpf_usuario;
-        this.retornou = dados[0].descricao == null ? false : true;
-      },
-      (erro: any) => {
-        alert(erro.error);
-      });
   }
 
 }
